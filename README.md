@@ -2,7 +2,6 @@
 
 [![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=flat&logo=google&logoColor=white)](https://developers.google.com/apps-script)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
-[![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
 [![UPC](https://img.shields.io/badge/UPC-Universitat%20Politècnica%20de%20Catalunya-0072C6.svg)](https://www.upc.edu)
 
 Sincronizador automático e inteligente entre el **Visor d'Horaris de la UPC** (NestJS / Keycloak SSO) y **Google Calendar**.
@@ -69,20 +68,15 @@ Ejecuta **`createDailyTrigger`** una vez. El script se sincronizará solo cada d
 
 Cada evento creado por el script incluye un bloque reservado en la descripción:
 
-```
 === COMENTARIS / NOTES ===
-
 === FI COMENTARIS ===
-```
 
 Escribe lo que quieras entre esas dos líneas:
 
-```
 === COMENTARIS / NOTES ===
 Llevar la práctica impresa
 Preguntar duda del ejercicio 3
 === FI COMENTARIS ===
-```
 
 > ✅ El script **conservará tu texto intacto** en cada sincronización, aunque la UPC cambie el aula, la hora o el profesor de la clase.
 
@@ -160,7 +154,7 @@ La clase se borra del calendario y **nunca vuelve a aparecer**, aunque la UPC la
 
 El script elimina del calendario las clases que la UPC quita del visor (clases oficialmente canceladas). Sin embargo, **nunca borrará** eventos cuyos títulos empiecen por:
 
-- `Examen` / `Examens` / `Exàmens` / `Examenes`
+- `Examen` / `Examens` / `Exàmens` / `Exámanes`
 - `Deures`
 - `Entrega`
 - `Pràctica` / `Practica`
@@ -175,17 +169,15 @@ Esto protege tanto los exámenes oficiales descargados automáticamente como cua
 | :--- | :--- | :--- |
 | **Título** | `Assignatura - (Tipus) - Grup` | `Fonaments Matemàtics - (T) - G20` |
 | **Ubicación** | `Campus - Aula` | `FIB - Aula A5 002` |
-| **Descripción** | Código, nombres, grupo, tipo, semestre, aules, profesorado, idioma + bloque de notas | *(ver arriba)* |
+| **Descripción** | Código, nombres, grupo, tipo, semestre, aulas, profesorado, idioma + bloque de notas | *(ver arriba)* |
 
 ---
 
 ## 📂 Estructura del proyecto
 
-```
 ├── code.js        ← Código completo para Google Apps Script
 ├── README.md      ← Este archivo
 └── LICENSE        ← Licencia MIT
-```
 
 ---
 
