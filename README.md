@@ -65,7 +65,7 @@ Ejecuta **`createDailyTrigger`** una vez. El script se sincronizará solo cada d
 
 ## 📖 Guía de uso del calendario
 
-### 📝 Añadir notas personales
+### 📝 1. Añadir notas personales
 
 Cada evento creado por el script incluye un bloque reservado en la descripción:
 
@@ -88,7 +88,23 @@ Preguntar duda del ejercicio 3
 
 ---
 
-### ❌ Clases que no se hacen (canceladas por el profesor)
+### ✍️ 2. Cómo añadir deberes, entregas o tareas personales
+
+Dispones de dos métodos infalibles para organizar tus tareas sin peligro de que el script las borre:
+
+#### Método A: Crear eventos independientes (Recomendado 🌟)
+Si tienes una entrega, deberes o quieres planificar una sesión de estudio:
+* **Simplemente crea un evento normal manualmente en tu Google Calendar** (haciendo clic en el día y hora que quieras).
+* *Por qué es seguro:* El script es inteligente y **solo** modifica o borra los eventos que él mismo ha creado (los cuales llevan una etiqueta oculta de sincronización). Tus eventos manuales son invisibles para el script y **nunca se tocarán**.
+
+#### Método B: Escribirlos dentro de la clase correspondiente
+* Abre el evento de la clase donde te han mandado la tarea.
+* Escribe tus deberes dentro del bloque de notas personales (`=== COMENTARIS ===`).
+* *Por qué es seguro:* El script protege este bloque en cada sincronización académica.
+
+---
+
+### ❌ 3. Clases que no se hacen (canceladas por el profesor)
 
 Si una clase sigue apareciendo en el visor UPC pero el profesor la ha suspendido o no se imparte, tienes **dos opciones**:
 
@@ -129,12 +145,6 @@ La clase se borra del calendario y **nunca vuelve a aparecer**, aunque la UPC la
 
 > ⚠️ **No necesitas buscar ninguna sección especial.** Escribe `#BORRAR` arriba del todo, abajo, en medio del texto... donde te sea más cómodo. El script lee la descripción entera.
 
-**¿Qué pasa internamente?**
-1. El script detecta la marca `[BORRAR]` o `#BORRAR`.
-2. Elimina el evento de Google Calendar.
-3. Guarda su identificador (`fecha|código|grupo|tipo`) en una **lista negra permanente** almacenada en las propiedades del script.
-4. En futuras sincronizaciones, aunque la API de la UPC devuelva esa clase, el script la ignora.
-
 ---
 
 ### 🛠️ Gestionar la lista negra desde Apps Script
@@ -155,7 +165,7 @@ El script elimina del calendario las clases que la UPC quita del visor (clases o
 - `Entrega`
 - `Pràctica` / `Practica`
 
-Esto protege tanto los eventos creados por el script (exámenes del visor) como los que tú añadas manualmente.
+Esto protege tanto los exámenes oficiales descargados automáticamente como cualquier evento que crees tú y empiece por estas palabras.
 
 ---
 
